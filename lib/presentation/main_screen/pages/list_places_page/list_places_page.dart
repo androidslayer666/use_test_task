@@ -103,6 +103,20 @@ class ListPlacesListPlacesItem extends StatelessWidget {
             ),
             Image.asset(place.imageAsset),
             Image.asset(place.backgroundAsset),
+            Positioned(
+              top: 120,
+              left: 42,
+              child: Container(
+                height: 35,
+                width: 35,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).backgroundColor,
+                ),
+                child: Image.asset('assets/images/bx_heart.png',
+                  color: Theme.of(context).primaryColor,
+                ),
+              ))
           ],
         ),
       ],

@@ -10,11 +10,14 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Stack(
-        children: const [
-          NotificationPageListNotifications(),
-          NotificationPageSearch(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Stack(
+          children: const [
+            NotificationPageListNotifications(),
+            NotificationPageSearch(),
+          ],
+        ),
       ),
     );
   }
@@ -25,14 +28,12 @@ class NotificationPageListNotifications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: listNotifications.length,
-          itemBuilder: (context, index) {
-            return NotificationPageNotificationItem(
-                notification: listNotifications[index]);
-          }),
-    );
+    return ListView.builder(
+        itemCount: listNotifications.length,
+        itemBuilder: (context, index) {
+          return NotificationPageNotificationItem(
+              notification: listNotifications[index]);
+        });
   }
 }
 
