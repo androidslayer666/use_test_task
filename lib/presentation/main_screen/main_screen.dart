@@ -49,17 +49,17 @@ class MainScreenAppBarButtonsRow extends StatelessWidget {
       children: [
         AppBarButton(
           chosen: currentPageIndex == 0,
-          iconData: Icons.menu,
+          asset: 'assets/images/menu_icon.png',
           onButtonClick: () => onButtonClick(0),
         ),
         AppBarButton(
           chosen: currentPageIndex == 1,
-          iconData: Icons.place,
+          asset: 'assets/images/place_icon.png',
           onButtonClick: () => onButtonClick(1),
         ),
         AppBarButton(
           chosen: currentPageIndex == 2,
-          iconData: Icons.doorbell,
+          asset: 'assets/images/notification_icon.png',
           onButtonClick: () => onButtonClick(2),
         )
       ],
@@ -71,12 +71,12 @@ class AppBarButton extends StatelessWidget {
   const AppBarButton(
       {Key? key,
       required this.chosen,
-      required this.iconData,
+      required this.asset,
       required this.onButtonClick})
       : super(key: key);
 
   final bool chosen;
-  final IconData iconData;
+  final String asset;
   final Function onButtonClick;
 
   @override
@@ -84,18 +84,18 @@ class AppBarButton extends StatelessWidget {
     return GestureDetector(
       onTap: () => onButtonClick(),
       child: Container(
-        height: 50,
-        width: 50,
+        height: 45,
+        width: 45,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: chosen
               ? Theme.of(context).primaryColor
               : Theme.of(context).backgroundColor,
         ),
-        child: Icon(
-          iconData,
-          size: 30,
-          color: chosen ? Colors.white : Theme.of(context).primaryColor,
+        child: Image.asset(asset,
+          color: chosen
+              ? Theme.of(context).backgroundColor
+              : Theme.of(context).primaryColor,
         ),
       ),
     );

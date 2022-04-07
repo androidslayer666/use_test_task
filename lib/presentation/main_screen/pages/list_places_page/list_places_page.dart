@@ -164,11 +164,8 @@ class ListPlacesSearchInput extends StatelessWidget {
                 border: InputBorder.none,
               ),
             )),
-            const Icon(
-              Icons.clear,
-              size: 20,
-              color: Color(0xFFBDBDBD),
-            ),
+
+            Image.asset('assets/images/bx_x.png',  color: Color(0xFFBDBDBD),),
             const SizedBox(width: 16),
             Container(
               height: 15,
@@ -177,8 +174,7 @@ class ListPlacesSearchInput extends StatelessWidget {
             ),
             const SizedBox(width: 16),
             Image.asset(
-              'assets/images/equalizer.png',
-              scale: 7,
+              'assets/images/bx_slider-line.png',
               color: Theme.of(context).primaryColor,
             )
           ],

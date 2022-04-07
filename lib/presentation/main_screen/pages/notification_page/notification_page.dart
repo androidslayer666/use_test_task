@@ -83,14 +83,14 @@ class _NotificationPageNotificationItemState extends State<NotificationPageNotif
           Padding(
             padding: const EdgeInsets.all(15),
             child: Container(
-                height: 50,
-                width: 50,
+                height: 45,
+                width: 45,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Theme.of(context).primaryColor),
                 child: Icon(
                   iconData ?? Icons.timelapse,
-                  size: 30,
+                  size: 25,
                   color: Colors.white,
                 )),
           ),

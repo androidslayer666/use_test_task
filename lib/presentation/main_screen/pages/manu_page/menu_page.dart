@@ -30,31 +30,31 @@ class MenuPageMenuItemsColumn extends StatelessWidget {
     return Column(
       children: [
         MenuPageMenuItem(
-          iconData: Icons.credit_card,
+          asset: 'assets/images/bx_credit-card.png',
           onPressed: () {},
           text: 'Способы оплаты',
         ),
         const SizedBox(height: 35),
         MenuPageMenuItem(
-          iconData: Icons.car_rental,
+          asset: 'assets/images/bx_car.png',
           onPressed: () {},
           text: 'Автомобили',
         ),
         const SizedBox(height: 35),
         MenuPageMenuItem(
-          iconData: Icons.list_alt,
+          asset: 'assets/images/bx_message-square-detail.png',
           onPressed: () {},
           text: 'Заказы',
         ),
         const SizedBox(height: 35),
         MenuPageMenuItem(
-          iconData: Icons.favorite,
+          asset: 'assets/images/bx_heart.png',
           onPressed: () {},
           text: 'Избранное (0)',
         ),
         const SizedBox(height: 35),
         MenuPageMenuItem(
-          iconData: Icons.settings,
+          asset: 'assets/images/bx_cog.png',
           onPressed: () {},
           text: 'Настройки',
         ),
@@ -71,13 +71,13 @@ class MenuPageMenuItemsBottom extends StatelessWidget {
     return Column(
       children: [
         MenuPageMenuItem(
-          iconData: Icons.support,
+          asset: 'assets/images/ic_baseline-support-agent.png',
           onPressed: () {},
           text: 'Поддержка',
         ),
         const SizedBox(height: 35),
         MenuPageMenuItem(
-          iconData: Icons.exit_to_app,
+          asset: 'assets/images/eva_log-out-outline.png',
           onPressed: () {},
           text: 'Выйти',
         )
@@ -89,12 +89,12 @@ class MenuPageMenuItemsBottom extends StatelessWidget {
 class MenuPageMenuItem extends StatelessWidget {
   const MenuPageMenuItem(
       {Key? key,
-      required this.iconData,
+      required this.asset,
       required this.text,
       required this.onPressed})
       : super(key: key);
 
-  final IconData iconData;
+  final String asset;
   final String text;
   final Function onPressed;
 
@@ -104,7 +104,10 @@ class MenuPageMenuItem extends StatelessWidget {
       onTap: onPressed(),
       child: Row(
         children: [
-          Icon(iconData, color: Theme.of(context).primaryColor,),
+          Image.asset(
+            asset,
+            color: Theme.of(context).primaryColor,
+          ),
           const SizedBox(width: 18,),
           Text(text, style: Theme.of(context).textTheme.bodyText2),
         ],
